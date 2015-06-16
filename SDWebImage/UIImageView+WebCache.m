@@ -43,7 +43,7 @@ static char imageURLKey;
     objc_setAssociatedObject(self, &imageURLKey, url, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
     if (!(options & SDWebImageDelayPlaceholder)) {
-        dispatch_main_async_safe(^{
+        dispatch_main_async_safe(^{//my comment
             self.image = placeholder;
         });
     }
