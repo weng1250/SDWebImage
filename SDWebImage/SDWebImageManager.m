@@ -129,7 +129,7 @@
     __weak SDWebImageCombinedOperation *weakOperation = operation;
 
     BOOL isFailedUrl = NO;
-    @synchronized (self.failedURLs) {
+    @synchronized (self.failedURLs) {//wzl:添加一个互斥锁，保证self.failedURLs变量不被其他线程访问以及修改
         isFailedUrl = [self.failedURLs containsObject:url];
     }
 
